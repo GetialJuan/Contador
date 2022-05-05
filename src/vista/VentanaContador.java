@@ -56,13 +56,12 @@ public class VentanaContador extends JFrame
         contenedorPrincipal.setLayout(new GridLayout(2,1));
         contenedorPrincipal.add(lblContador);
         contenedorPrincipal.add(btnModificar);
-        contenedorPrincipal.addKeyListener(new ManejadorEventos());
         
         //Se le agrega el listener
         btnModificar.addMouseListener(new ManejadorEventos());
     }
     
-    private class ManejadorEventos implements MouseListener, KeyListener
+    private class ManejadorEventos implements MouseListener
     {
 
         @Override
@@ -107,32 +106,5 @@ public class VentanaContador extends JFrame
         public void mouseExited(MouseEvent me) {
             //System.out.println("");
         }
-
-        @Override
-        public void keyTyped(KeyEvent e) {
-            /*
-            if(e.getKeyChar() == 'R')
-            {
-                int decision = JOptionPane.showConfirmDialog(null, "¿Realmente desea resetear el contador?", "Confirmar reseteo", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                if(decision == 0)
-                {
-                    miContador.resetearContador();
-                }
-            }
-            lblContador.setText(miContador.getCuenta()+"");*/
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            JOptionPane.showMessageDialog(null, e.getKeyCode());
-            System.out.println(e.getKeyCode());
-            //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-        
     }
 }
